@@ -191,6 +191,7 @@ public class ArrayUtils {
 		return newArray;
 	}
 
+	
 	/**
 	 * Inserts a new value at an index in the array
 	 * 
@@ -240,23 +241,20 @@ public class ArrayUtils {
 	 * @param intArray
 	 * @return
 	 */
-	//fix this one -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 	public static boolean arrayContainsDuplicates(int[] intArray) {
-		//Have: [2, 64, 2, 768, 342, 2, 43]
-		boolean dup = false;
-		for(int i = 0; i < intArray.length; i++) {
-			for(int j = 0; j < intArray.length; j++) {
-				if (intArray[i] == intArray[j]) {
-					dup = true;
-				}
-				else{
-					dup = false;
-				}
-			}
-		}
-		return dup;
+		
+		boolean duplicates = false;
+		
+		for (int i = 0;i < intArray.length; i++)
+		  for (int j=i+1;j<intArray.length;j++)
+			  
+		    if (j!=i && intArray[j] == intArray[i])
+		      duplicates=true;
+			  return duplicates;
 	}
 
+	
 	/**
 	 * Swaps two indexes in array
 	 * 
@@ -307,16 +305,17 @@ public class ArrayUtils {
 		boolean swapOccured = false;
 		
 		for (int i = 0; i < data.length - 1; i++) {
-			if(data[i] > data[i + 1]){
-				arraySwap(i, i+1, data);
-				swapOccured = true;
-			}
-			
-
-		//	}
-		}
-	}
-	}
 	
-
-
+	
+					for(int j = i+1; j < data.length; j++){
+						if(data[i] > data[j]){
+							arraySwap(i, j, data);
+				}
+			}
+		}
+		
+				
+				
+		
+	}
+}
